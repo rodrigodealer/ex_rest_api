@@ -9,5 +9,5 @@ defmodule RestApi do
   end
 end
 
-IO.puts "Running RestApi with Cowboy on http://localhost:4000"
-Plug.Adapters.Cowboy.http RestApi, []
+IO.puts "Running RestApi with Cowboy on http://localhost:3000"
+Plug.Adapters.Cowboy.http RestApi, [], port: 3000
