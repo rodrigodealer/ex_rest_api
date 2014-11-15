@@ -9,5 +9,10 @@ defmodule RestApi do
   end
 end
 
-IO.puts "Running RestApi with Cowboy on http://localhost:4000"
-Plug.Adapters.Cowboy.http RestApi, []
+port = System.get_env("PORT")
+if port == nil do
+	port = "4000"
+end
+
+IO.puts "Running RestApi with Cowboy on http://localhost:#{port}"
+Plug.Adapters.Cowboy.http RestApi, [], port: String.to_integer(port)
