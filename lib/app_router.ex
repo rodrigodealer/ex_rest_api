@@ -10,7 +10,7 @@ defmodule AppRouter do
   end
 
   get "/hello" do
-    send_resp(conn, 200, "world")
+    send_resp(conn, 200, Poison.Encoder.encode(:ok, []))
   end
 
   match _ do
