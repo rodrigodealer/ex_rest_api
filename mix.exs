@@ -12,7 +12,7 @@ defmodule RestApi.Mixfile do
   #
   # Type `mix help compile.app` for more information
   def application do
-    [applications: [:logger, :cowboy, :plug]]
+    [applications: [:logger, :cowboy, :plug, :httpoison]]
   end
 
   # Dependencies can be Hex packages:
@@ -27,6 +27,7 @@ defmodule RestApi.Mixfile do
   defp deps do
     [{:cowboy, "~> 1.0.0"}, 
     {:plug, "~> 0.8.2"},
-    {:poison,   "~> 1.4.0"}]
+    {:poison,   "~> 1.4.0"},
+    {:httpoison, "~> 0.6"}]
   end
 end
